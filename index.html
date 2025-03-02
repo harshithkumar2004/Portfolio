@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/log.png" class="logo">
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Tech & Art Enthusiast</p>
+            <h1>Hi, I'm <span>Harshith</span><br>from India</h1>
+        </div>
+    </div>
+</div>
+<!-- -----------about---------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png" alt="Harshith Kumar">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>I am Harshith Kumar, a Computer Science Engineering student with a strong passion for front-end web development, Machine Learning, and Artificial Intelligence. Skilled in HTML, CSS, JavaScript, and modern frameworks, I enjoy crafting intuitive and visually appealing user experiences. With a solid foundation in OpenCV and Python, I explore AI-driven solutions that enhance interactivity and efficiency. Beyond technology, I am also a dedicated Carnatic musician, blending creativity with analytical thinking. Constantly learning and evolving, I strive to build impactful and innovative web applications.</p>
+
+                <div class="tab-container">
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('certifications')">License & Certifications</p>
+                        <p class="tab-links" onclick="opentab('volunteering')">Volunteering</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>UI/UX Design Training at ET Institute</li>
+                            <li><span>2019 - 2021</span><br>Team lead at StarApp LLC.</li>
+                            <li><span>2017 - 2019</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                            <li><span>2016 - 2017</span><br>Internship at ekart eCommerce.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022 - Present</span><br>B.E. Computer Science & Engineering in AIML at Sahyadri College of Engineering & Management, Mangaluru</li>
+                            <li><span>2020 - 2022</span><br>Mahesh Pre-University College, Kottara, Mangaluru</li>
+                            <li><span>2008 - 2020</span><br>Shri Mahalingeshwara English Medium School, Surathkal</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="certifications">
+                        <ul>
+                            <li><span>2023</span><br>Machine Learning Internship Certification</li>
+                            <li><span>2023</span><br>OpenCV & AI Tools Certification</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="volunteering">
+                        <ul>
+                            <li><span>2023 - Present</span><br>IEEE Student Volunteer</li>
+                            <li><span>2023 - Present</span><br>National Service Scheme Volunteer</li>
+                            <li><span>2024</span><br>BIS Student Volunteer</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ---------services---------------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fas fa-robot"></i>
+                <h2>ML Model Building</h2>
+               
+                <a href="https://www.geeksforgeeks.org/machine-learning-models/"><h4>Learn more</h4></a>
+            </div>
+            <div>
+                <i class="fas fa-brain"></i>
+                <h2>AI Research & Implementation Using Existing LLM's</h2>
+              
+                <a href="https://www.google.com/search?q=AI+Research+%26+Implementation+Using+Existing+LLM%27s+&sca_esv=8b070b8b3b246bd8&sxsrf=AHTn8zpG51QUBdP5jEJa-sU6jqnoHs4_9w%3A1740942263533&ei=t6vEZ4CfIL3h1e8PgeWTYA&ved=0ahUKEwjA1sSpi-yLAxW9cPUHHYHyBAwQ4dUDCBA&uact=5&oq=AI+Research+%26+Implementation+Using+Existing+LLM%27s+&gs_lp=Egxnd3Mtd2l6LXNlcnAiMkFJIFJlc2VhcmNoICYgSW1wbGVtZW50YXRpb24gVXNpbmcgRXhpc3RpbmcgTExNJ3MgMgQQIxgnMggQABiABBiiBDIFEAAY7wUyBRAAGO8FMggQABiABBiiBDIFEAAY7wVI9RZQ3gRYrRBwAXgBkAEAmAFuoAGSC6oBBDMuMTG4AQPIAQD4AQGYAgegAvYEwgIKEAAYsAMY1gQYR5gDAIgGAZAGCJIHAzEuNqAH8GM&sclient=gws-wiz-serp#vhid=zephyr:0&vssid=atritem-"><h4>Learn more</h4></a>
+            </div>
+            <div>
+                <i class="fas fa-music"></i>
+                <h2>Music Performances & Composing (Carnatic)</h2>
+                <a href="#"><h4>Learn more</h4></a>
+            </div>
+            
+            <div>
+                <i class="fas fa-chart-line"></i>
+                <h2>Data Science</h2>
+             
+                <a href="#"><h4>Learn more</h4></a>
+            </div>
+            <div>
+                <i class="fas fa-calendar-alt"></i>
+                <h2>Event Planning & Management</h2>
+                <a href="#"><h4>Learn more</h4></a>
+            </div>
+            
+            <div>
+                <i class="fas fa-image"></i>
+                <h2>Image Processing Basics-OpenCV</h2>
+               
+                <a href="#"><h4>Learn more</h4></a>
+            </div>
+            
+            <div>
+                <i class="fas fa-toolbox"></i>
+                <h2>Postman API</h2>
+               
+                <a href="https://www.postman.com/postman/postman-public-workspace/documentation/i2uqzpp/postman-api"><h4>Learn more</h4></a>
+            </div>
+            <div>
+                <i class="fas fa-chart-bar"></i>
+                <h2>Data Analysis</h2>
+               
+                <a href="#"><h4>Learn more</h4></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ----------portfolio------------ -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work.png">
+                <div class="layer">
+                    <h3>AI Resume Analyzer & Job Matcher</h3>
+                    <p>An AI-powered Resume Analyzer that extracts text from PDFs, finds top job matches, and provides an AI-driven Resume Score. It helps job seekers optimize resumes and generates a detailed PDF analysis with job recommendations.</p>
+                    <a href="https://github.com/harshithkumar2004/ResumeProject"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-12.png">
+                <div class="layer">
+                    <h3>AI-Powered Simple Music Insight Analyser</h3>
+                    <p>A good AI-driven tool designed to analyze music trends, sentiment, and popularity using Last.fm data, machine learning, and interactive visualizations.</p>
+                    <a href="https://github.com/harshithkumar2004/AI-Powered-Music-Insight-Analyzer"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-13.png">
+                <div class="layer">
+                    <h3>CyberResolve - AI-Powered Legal Assistant</h3>
+                    <p>CyberResolve is an AI-driven legal assistant that efficiently retrieves legal information using Mistral/Gemini API and FAISS for vector-based search on IPC Law datasets.</p>
+                    <a href="https://github.com/harshithkumar2004/Cyberesolve"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-14.png">
+                <div class="layer">
+                    <h3>CS-Algorithms-Visualizer</h3>
+                    <p>This project focuses on visualization and analysis tool for various algorithms, including sorting and many more.  As a developer, I wanted to create an intuitive way to understand and analyze how different algorithms work step by step.</p>
+                    <a href="https://github.com/harshithkumar2004/CS-Algorithms-Visualizer"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+    </div>
+</div>
+<!-- ----------contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i> harshithk1382004@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i> +91 9164594587</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100067883595964" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/harshithkumar2004" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/harshithkumar.music/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/harshith-kumar-3839bb241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/+919164594587" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                      
+                </div>
+                <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Harshith Kumar. Made with <i class="fas fa-heart"></i></p>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    var sidemeu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemeu.style.right = "0";
+    }
+    function closemenu() {
+        sidemeu.style.right = "-200px";
+    }
+
+    const scriptURL = ''; // Add your Google Sheets script URL here
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully";
+                setTimeout(function() {
+                    msg.innerHTML = "";
+                }, 5000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
+</body>
+</html>
