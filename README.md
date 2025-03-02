@@ -20,8 +20,6 @@ This is a personal portfolio website designed to showcase my skills, experience,
 ## Live Demo  
 🔗 [Live Portfolio](#) *(Replace with actual link if deployed)*  
 
-## Screenshots  
-*(Include screenshots of your website here to give visitors a preview.)*  
 
 ## Contact  
 For any queries or collaborations, feel free to reach out via:  
