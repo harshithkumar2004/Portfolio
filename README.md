@@ -18,7 +18,7 @@ This is a personal portfolio website designed to showcase my skills, experience,
 - Google Fonts – Enhanced typography for better readability.  
 
 ## Live Demo  
-🔗 [Live Portfolio](#) *(Replace with actual link if deployed)*  
+🔗 [Live Portfolio](https://harshithkportfolio.netlify.app/) 
 
 
 ## Contact  
