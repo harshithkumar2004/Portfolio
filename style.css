@@ -15,16 +15,70 @@ body {
     background: #080808;
     color: #fff;
     line-height: 1.6;
-    text-align: justify;
+    overflow-x: hidden;
+}
+
+/* Full-Screen Preloader Transition */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #080808;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s ease;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#preloader .loader {
+    border: 5px solid #720cd1;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fade-In Effect for Entire Page */
+body.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #header {
     width: 100%;
-    height: 100vh;
+    height: 130vh;
     background-image: url(images/ac.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
@@ -40,6 +94,16 @@ nav {
 
 .logo {
     width: 130px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 nav ul li {
@@ -54,13 +118,14 @@ nav ul li a {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     position: relative;
+    transition: color 0.5s;
 }
 
 nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #720cd1;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -71,19 +136,46 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+nav ul li a:hover {
+    color: #720cd1;
+}
+
 .header-text {
     margin-top: 20%;
     font-size: 45px;
     font-family: 'Playfair Display', serif;
+    animation: slideIn 1.5s ease-out;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .header-text h1 {
     font-size: 70px;
     margin-top: 20px;
+    animation: float 3s ease-in-out infinite;
 }
 
 .header-text h1 span {
-    color: #ff004f;
+    color: #720cd1;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: #720cd1;
+    }
+    50% {
+        color: #fff;
+    }
 }
 
 /* -----------about--------------- */
@@ -100,15 +192,42 @@ nav ul li a:hover::after {
 
 .about-col-1 {
     flex-basis: 35%;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .about-col-1 img {
     width: 100%;
     border-radius: 15px;
+    transition: transform 0.5s;
+}
+
+.about-col-1 img:hover {
+    transform: scale(1.1);
 }
 
 .about-col-2 {
     flex-basis: 60%;
+    animation: slideInRight 2s ease-out;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .sub-title {
@@ -116,12 +235,12 @@ nav ul li a:hover::after {
     font-weight: 600;
     color: #fff;
     font-family: 'Playfair Display', serif;
+    animation: float 3s ease-in-out infinite;
 }
 
 .tab-titles {
     display: flex;
     margin: 20px 0 40px;
-    flex-wrap: wrap;
 }
 
 .tab-links {
@@ -132,13 +251,14 @@ nav ul li a:hover::after {
     position: relative;
     font-family: 'Roboto', sans-serif;
     color: #fff;
+    transition: color 0.5s;
 }
 
 .tab-links::after {
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #720cd1;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -149,13 +269,17 @@ nav ul li a:hover::after {
     width: 50%;
 }
 
+.tab-links:hover {
+    color: #720cd1;
+}
+
 .tab-contents ul li {
     list-style: none;
     margin: 10px 0;
 }
 
 .tab-contents ul li span {
-    color: #ff004f;
+    color: #720cd1;
     font-size: 18px;
     font-weight: 600;
 }
@@ -163,6 +287,7 @@ nav ul li a:hover::after {
 .tab-contents {
     display: none;
     color: #fff;
+    animation: fadeIn 1s ease-in;
 }
 
 .tab-contents.active-tab {
@@ -188,12 +313,13 @@ nav ul li a:hover::after {
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
+    animation: float 3s ease-in-out infinite;
 }
 
 .services-list div i {
     font-size: 50px;
     margin-bottom: 30px;
-    color: #ff004f;
+    color: #720cd1;
 }
 
 .services-list div h2 {
@@ -212,7 +338,7 @@ nav ul li a:hover::after {
 }
 
 .services-list div:hover {
-    background: #ff004f;
+    background: #720cd1;
     transform: translateY(-10px);
 }
 
@@ -232,6 +358,7 @@ nav ul li a:hover::after {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    animation: fadeIn 2s ease-in;
 }
 
 .work img {
@@ -244,7 +371,7 @@ nav ul li a:hover::after {
 .layer {
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    background: linear-gradient(rgba(0,0,0,0.6), #720cd1);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -266,12 +393,11 @@ nav ul li a:hover::after {
     margin-bottom: 25px;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: bold;
-
 }
 
 .layer a {
     margin-top: 20px;
-    color: #ff004f;
+    color: #720cd1;
     text-decoration: none;
     font-size: 20px;
     line-height: 60px;
@@ -294,26 +420,40 @@ nav ul li a:hover::after {
     display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #720cd1;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
     transition: background 0.5s;
     font-family: 'Roboto', sans-serif;
+    animation: float 3s ease-in-out infinite;
 }
 
 .btn:hover {
-    background: #ff004f;
+    background: #720cd1;
 }
 
 /* ---------contact-------- */
 .contact-left {
     flex-basis: 35%;
+    animation: slideInLeft 2s ease-out;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .contact-right {
     flex-basis: 60%;
+    animation: slideInRight 2s ease-out;
 }
 
 .contact-left p {
@@ -321,7 +461,7 @@ nav ul li a:hover::after {
 }
 
 .contact-left p i {
-    color: #ff004f;
+    color: #720cd1;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -340,13 +480,13 @@ nav ul li a:hover::after {
 }
 
 .social-icons a:hover {
-    color: #ff004f;
+    color: #720cd1;
     transform: translateY(-5px);
 }
 
 .btn.btn2 {
     display: inline-block;
-    background: #ff004f;
+    background: #720cd1;
 }
 
 .contact-right form {
@@ -364,6 +504,11 @@ form input, form textarea {
     font-size: 18px;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
+    transition: transform 0.5s;
+}
+
+form input:hover, form textarea:hover {
+    transform: scale(1.02);
 }
 
 form .btn2 {
@@ -371,6 +516,7 @@ form .btn2 {
     font-size: 18px;
     margin-top: 20px;
     cursor: pointer;
+    animation: float 3s ease-in-out infinite;
 }
 
 .copyright {
@@ -384,11 +530,11 @@ form .btn2 {
 }
 
 .copyright i {
-    color: #ff004f;
+    color: #720cd1;
 }
 
 .copyright a {
-    color: #ff004f;
+    color: #720cd1;
     text-decoration: none;
 }
 
@@ -396,7 +542,68 @@ form .btn2 {
 nav .fas {
     display: none;
 }
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
+.animated-gradient {
+    background: linear-gradient(270deg, #720cd1, #ff0099, #00ffcc);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+.btn {
+    background: linear-gradient(270deg, #720cd1, #ff0099);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+.services-list div {
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.services-list div:hover {
+    transform: perspective(1000px) rotateY(10deg);
+    box-shadow: 0 20px 40px rgba(114, 12, 209, 0.5);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #720cd1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0099;
+}
+
+.glow-text {
+    text-shadow: 0 0 10px #720cd1, 0 0 20px #720cd1, 0 0 40px #720cd1;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #720cd1, 0 0 20px #720cd1, 0 0 40px #720cd1;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff0099, 0 0 40px #ff0099, 0 0 80px #ff0099;
+    }
+}
 @media only screen and (max-width: 600px) {
     #header {
         background-image: url(images/phone-background.png);
@@ -417,7 +624,7 @@ nav .fas {
     }
 
     nav ul {
-        background: #ff004f;
+        background: #720cd1;
         position: fixed;
         top: 0;
         right: -200px;
@@ -427,7 +634,16 @@ nav .fas {
         z-index: 2;
         transition: right 0.5s;
     }
-
+    .light-mode {
+        background: #fff;
+        color: #080808;
+    }
+    
+    .light-mode .btn {
+        background: #720cd1;
+        color: #fff;
+    }
+    
     nav ul li {
         display: block;
         margin: 25px;
@@ -438,6 +654,22 @@ nav .fas {
         top: 25px;
         left: 25px;
         cursor: pointer;
+    }
+    #header {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
     }
 
     .sub-title {
@@ -474,4 +706,84 @@ nav .fas {
     color: #61b752;
     margin-top: -40px;
     display: block;
+}
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #080808;
+    color: #fff;
+}
+
+body.dark-mode .btn {
+    background: #720cd1;
+    color: #fff;
+}
+
+body.dark-mode .services-list div {
+    background: #262626;
+}
+
+body.dark-mode .contact-right form input,
+body.dark-mode .contact-right form textarea {
+    background: #262626;
+    color: #fff;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background: #fff;
+    color: #080808;
+}
+
+body.light-mode .btn {
+    background: #720cd1;
+    color: #fff;
+}
+
+body.light-mode .services-list div {
+    background: #f1f1f1;
+    color: #080808;
+}
+
+body.light-mode .contact-right form input,
+body.light-mode .contact-right form textarea {
+    background: #f1f1f1;
+    color: #080808;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #720cd1;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle .fa-sun {
+    display: none; /* Hide sun icon by default */
+}
+
+body.light-mode .theme-toggle .fa-moon {
+    display: none; /* Hide moon icon in light mode */
+}
+
+body.light-mode .theme-toggle .fa-sun {
+    display: inline; /* Show sun icon in light mode */
+}
+.purple-text {
+    color: #720cd1; /* Purple color */
+}
+/* Canvas Styles */
+#bubble-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place it behind other content */
+    background: #080808; /* Match your website's background color */
 }
