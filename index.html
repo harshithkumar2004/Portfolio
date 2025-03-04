@@ -342,29 +342,7 @@
             lazyImages.forEach(img => observer.observe(img));
         });
     
-        // Dark/Light Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-    
-        // Check saved theme from localStorage
-        if (localStorage.getItem('theme') === 'light') {
-            body.classList.add('light-mode');
-            themeToggle.innerHTML = '🌙'; // Moon icon for light mode
-        } else {
-            themeToggle.innerHTML = '☀️'; // Sun icon for dark mode
-        }
-    
-        // Toggle theme on button click
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            if (body.classList.contains('light-mode')) {
-                localStorage.setItem('theme', 'light');
-                themeToggle.innerHTML = '🌙';
-            } else {
-                localStorage.setItem('theme', 'dark');
-                themeToggle.innerHTML = '☀️';
-            }
-        });
+        
     
         // Animated Counters
         function animateCounters() {
