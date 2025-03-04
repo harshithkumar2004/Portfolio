@@ -31,15 +31,12 @@
                     <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
-                <!-- Add this button -->
-                <button id="theme-toggle" class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
+                
             </nav>
             <div class="header-text">
+                
+                <h1><span></span>Harshith Kumar</span></h1>
                 <p>Tech & Art Enthusiast</p>
-                <h1>Hi, I'm <span>Harshith </span><br>from India</h1>
             </div>
         </div>
     </div>
@@ -204,12 +201,12 @@
                     <img src="images/work-14.png">
                     <div class="layer">
                         <h3>CS-Algorithms-Visualizer</h3>
-                        <p>This project focuses on visualization and analysis tool for various algorithms, including sorting and many more.  As a developer, I wanted to create an intuitive way to understand and analyze how different algorithms work step by step.</p>
+                        <p>This project focuses on visualization and analysis tool for various algorithms, including sorting and many more. As a developer, I wanted to create an intuitive way to understand and analyze how different algorithms work step by step.</p>
                         <a href="https://github.com/harshithkumar2004/CS-Algorithms-Visualizer"><i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn">See more</a>
+            <a href="https://github.com/harshithkumar2004" class="btn">See more</a>
         </div>
     </div>
 
@@ -251,25 +248,25 @@
         window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');
             const body = document.body;
-    
+
             // High-Level Boot Transition
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.transform = 'scale(1.5)';
                 preloader.style.transition = 'all 1.5s ease';
             }, 1000);
-    
+
             // Remove preloader from DOM after transition
             setTimeout(() => {
                 preloader.remove();
                 body.classList.add('loaded');
             }, 2500);
         });
-    
+
         // Tab Switching
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
-    
+
         function opentab(tabname) {
             for (tablink of tablinks) {
                 tablink.classList.remove("active-link");
@@ -280,17 +277,17 @@
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
         }
-    
+
         // Side Menu Toggle
         var sidemeu = document.getElementById("sidemenu");
-    
+
         function openmenu() {
             sidemeu.style.right = "0";
         }
         function closemenu() {
             sidemeu.style.right = "-200px";
         }
-    
+
         // Smooth Scroll with Offset
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -299,84 +296,53 @@
                 const targetElement = document.querySelector(targetId);
                 const offset = 80; // Adjust for fixed header height
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-    
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
             });
         });
-    
-        // Typewriter Effect
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = ""; // Clear the existing content
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-    
-        // Apply typewriter effect to the header text
-        const headerText = document.querySelector('.header-text h1');
-       // const headerContent = "Hi, I'm Harshith from India"; // Text to display
-        typeWriter(headerText, headerContent);
-    
-        // Lazy Loading for Images
-        document.addEventListener('DOMContentLoaded', function () {
-            const lazyImages = document.querySelectorAll('.lazy-load');
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        observer.unobserve(img);
-                    }
+
+        // Text Air Movement Effect
+        function addTextAirEffect(element) {
+            const text = element.innerText;
+            element.innerHTML = ''; // Clear the existing text
+
+            // Split the text into individual letters and wrap them in spans
+            text.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.innerText = letter;
+                span.style.transition = 'transform 0.3s ease';
+                span.style.display = 'inline-block';
+                element.appendChild(span);
+
+                // Add hover effect
+                span.addEventListener('mouseenter', () => {
+                    span.style.transform = 'translateY(-10px)';
+                });
+                span.addEventListener('mouseleave', () => {
+                    span.style.transform = 'translateY(0)';
                 });
             });
-    
-            lazyImages.forEach(img => observer.observe(img));
-        });
-    
-
-    
-        // Animated Counters
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const increment = target / 100;
-                let count = 0;
-    
-                const updateCounter = () => {
-                    if (count < target) {
-                        count += increment;
-                        counter.innerText = Math.ceil(count);
-                        setTimeout(updateCounter, 10);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
-    
-                updateCounter();
-            });
         }
-    
-        window.addEventListener('load', animateCounters);
-    
+
+        // Apply text air effect to specific elements
+        const headerText = document.querySelector('.header-text h1');
+        addTextAirEffect(headerText);
+
+        const subTitles = document.querySelectorAll('.sub-title');
+        subTitles.forEach(title => addTextAirEffect(title));
+
         // Purple Bubbles Background with Mouse Interaction
         const bubbleCanvas = document.getElementById('bubble-canvas');
         const bubbleCtx = bubbleCanvas.getContext('2d');
         bubbleCanvas.width = window.innerWidth;
         bubbleCanvas.height = window.innerHeight;
-    
+
         let bubblesArray = [];
         const numberOfBubbles = 100;
-    
+
         class Bubble {
             constructor(x, y, size, color, weight) {
                 this.x = x;
@@ -401,14 +367,14 @@
                 }
                 this.y += this.weight; // Move the bubble down
                 this.weight += 0.2; // Increase weight for gravity effect
-    
+
                 // Bounce off the bottom of the screen
                 if (this.y > bubbleCanvas.height - this.size) {
                     this.weight *= -0.5; // Reverse direction and reduce speed
                 }
             }
         }
-    
+
         function initBubbles() {
             bubblesArray = [];
             for (let i = 0; i < numberOfBubbles; i++) {
@@ -420,16 +386,16 @@
                 bubblesArray.push(new Bubble(x, y, size, color, weight));
             }
         }
-    
+
         // Handle mouse movement
         let mouseX = null;
         let mouseY = null;
-    
+
         window.addEventListener('mousemove', (event) => {
             mouseX = event.x;
             mouseY = event.y;
         });
-    
+
         // Move bubbles towards the mouse cursor
         function moveBubbles() {
             bubblesArray.forEach(bubble => {
@@ -441,7 +407,7 @@
                 }
             });
         }
-    
+
         // Animate the bubbles
         function animateBubbles() {
             bubbleCtx.clearRect(0, 0, bubbleCanvas.width, bubbleCanvas.height);
@@ -452,16 +418,44 @@
             });
             requestAnimationFrame(animateBubbles);
         }
-    
+
         // Initialize and start the bubble animation
         initBubbles();
         animateBubbles();
-    
+
         // Resize canvas on window resize
         window.addEventListener('resize', () => {
             bubbleCanvas.width = window.innerWidth;
             bubbleCanvas.height = window.innerHeight;
             initBubbles();
+        });
+
+        // Screen Transition Logic
+        function screenTransition(targetSectionId) {
+            const transitionElement = document.createElement('div');
+            transitionElement.classList.add('screen-transition');
+            document.body.appendChild(transitionElement);
+
+            // Wait for the transition animation to complete
+            setTimeout(() => {
+                // Navigate to the target section
+                const targetSection = document.getElementById(targetSectionId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+
+                // Remove the transition element after navigation
+                setTimeout(() => {
+                    transitionElement.remove();
+                }, 800); // Match the duration of the animation
+            }, 400); // Halfway through the animation
+        }
+
+        // Add event listeners to navigation links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default anchor behavior
+                const targetSectionId = link.getAttribute('href').substring(1); // Remove the '#' from href
+                screenTransition(targetSectionId);
+            });
         });
     </script>
 </body>
