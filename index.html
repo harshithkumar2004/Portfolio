@@ -53,7 +53,9 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>I am Harshith Kumar, a Computer Science Engineering student with a strong passion for front-end web development, Machine Learning, and Artificial Intelligence. Skilled in HTML, CSS, JavaScript, and modern frameworks, I enjoy crafting intuitive and visually appealing user experiences. With a solid foundation in OpenCV and Python, I explore AI-driven solutions that enhance interactivity and efficiency. Beyond technology, I am also a dedicated Carnatic musician, blending creativity with analytical thinking. Constantly learning and evolving, I strive to build impactful and innovative web applications.</p>
+                    <p style="text-align: justify;">
+                        I am Harshith Kumar, a Computer Science Engineering student with a strong passion for front-end web development, Machine Learning, and Artificial Intelligence. Skilled in HTML, CSS, JavaScript, and modern frameworks, I enjoy crafting intuitive and visually appealing user experiences. With a solid foundation in OpenCV and Python, I explore AI-driven solutions that enhance interactivity and efficiency. Beyond technology, I am also a dedicated Carnatic musician, blending creativity with analytical thinking. Constantly learning and evolving, I strive to build impactful and innovative web applications.
+                    </p>
 
                     <div class="tab-container">
                         <div class="tab-titles">
@@ -245,20 +247,23 @@
     </div>
 
     <script>
-        // Preloader and Fade-In Effect
+        // Preloader and High-Level Boot Transition
         window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');
             const body = document.body;
     
-            // Fade out preloader
+            // High-Level Boot Transition
             setTimeout(() => {
-                preloader.classList.add('fade-out');
+                preloader.style.opacity = '0';
+                preloader.style.transform = 'scale(1.5)';
+                preloader.style.transition = 'all 1.5s ease';
             }, 1000);
     
-            // Add fade-in effect to body
+            // Remove preloader from DOM after transition
             setTimeout(() => {
-                body.classList.add('fade-in');
-            }, 1500);
+                preloader.remove();
+                body.classList.add('loaded');
+            }, 2500);
         });
     
         // Tab Switching
@@ -318,7 +323,7 @@
     
         // Apply typewriter effect to the header text
         const headerText = document.querySelector('.header-text h1');
-        //const headerContent = "Hi, I'm Harshith from India"; // Text to display
+       // const headerContent = "Hi, I'm Harshith from India"; // Text to display
         typeWriter(headerText, headerContent);
     
         // Lazy Loading for Images
@@ -344,12 +349,21 @@
         // Check saved theme from localStorage
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-mode');
+            themeToggle.innerHTML = '🌙'; // Moon icon for light mode
+        } else {
+            themeToggle.innerHTML = '☀️'; // Sun icon for dark mode
         }
     
         // Toggle theme on button click
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-mode');
-            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '🌙';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '☀️';
+            }
         });
     
         // Animated Counters
