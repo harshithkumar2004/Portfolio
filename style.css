@@ -756,7 +756,7 @@ nav .fas {
 @media only screen and (max-width: 600px) {
     /* Header Adjustments */
     #header {
-        background-image: url(images/ac1.png);
+        background-image: url(images/ac2.png);
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
