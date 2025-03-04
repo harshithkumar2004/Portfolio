@@ -597,9 +597,12 @@ form .btn2 {
 }
 
 /* -----------------css for small screens--------- */
+/* Hide font-awesome icons by default */
 nav .fas {
     display: none;
 }
+
+/* Gradient Animation */
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
@@ -612,19 +615,38 @@ nav .fas {
     }
 }
 
+/* Animated Gradient Background */
 .animated-gradient {
     background: linear-gradient(270deg, #720cd1, #ff0099, #00ffcc);
     background-size: 200% 200%;
     animation: gradientAnimation 5s ease infinite;
 }
+
+/* Gradient Buttons */
 .btn {
     background: linear-gradient(270deg, #720cd1, #ff0099);
     background-size: 200% 200%;
     animation: gradientAnimation 5s ease infinite;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* 3D Hover Effect for Services */
 .services-list div {
     transform: perspective(1000px) rotateY(0deg);
     transition: transform 0.5s, box-shadow 0.5s;
+    background: #262626;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 .services-list div:hover {
@@ -632,6 +654,7 @@ nav .fas {
     box-shadow: 0 20px 40px rgba(114, 12, 209, 0.5);
 }
 
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -649,6 +672,7 @@ nav .fas {
     background: #ff0099;
 }
 
+/* Glowing Text Animation */
 .glow-text {
     text-shadow: 0 0 10px #720cd1, 0 0 20px #720cd1, 0 0 40px #720cd1;
     animation: glow 2s infinite alternate;
@@ -662,23 +686,38 @@ nav .fas {
         text-shadow: 0 0 20px #ff0099, 0 0 40px #ff0099, 0 0 80px #ff0099;
     }
 }
+
+/* Mobile Responsive Design */
 @media only screen and (max-width: 600px) {
+    /* Header Adjustments */
     #header {
         background-image: url(images/phone-background.png);
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
     }
 
     .header-text {
-        margin-top: 100%;
+        margin-top: 50%;
         font-size: 16px;
+        text-align: center;
     }
 
     .header-text h1 {
         font-size: 30px;
     }
 
+    /* Mobile Navigation */
     nav .fas {
         display: block;
         font-size: 25px;
+        cursor: pointer;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
     }
 
     nav ul {
@@ -692,19 +731,11 @@ nav .fas {
         z-index: 2;
         transition: right 0.5s;
     }
-    .light-mode {
-        background: #fff;
-        color: #080808;
-    }
-    
-    .light-mode .btn {
-        background: #720cd1;
-        color: #fff;
-    }
-    
+
     nav ul li {
         display: block;
         margin: 25px;
+        text-align: center;
     }
 
     nav ul .fas {
@@ -713,27 +744,8 @@ nav .fas {
         left: 25px;
         cursor: pointer;
     }
-    #header {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .parallax {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-    }
 
-    .sub-title {
-        font-size: 40px;
-    }
-
+    /* About Section */
     .about-col-1, .about-col-2 {
         flex-basis: 100%;
     }
@@ -746,25 +758,41 @@ nav .fas {
         font-size: 14px;
     }
 
+    /* Tabs */
     .tab-links {
         font-size: 16px;
         margin-right: 20px;
     }
 
+    /* Contact Section */
     .contact-left, .contact-right {
         flex-basis: 100%;
     }
 
+    .contact-right form input,
+    .contact-right form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    /* Footer */
     .copyright {
         font-size: 14px;
+        text-align: center;
     }
 }
 
+/* Success Message */
 #msg {
     color: #61b752;
     margin-top: -40px;
     display: block;
+    text-align: center;
 }
+
 /* Dark Mode Styles */
 body.dark-mode {
     background: #080808;
@@ -832,9 +860,12 @@ body.light-mode .theme-toggle .fa-moon {
 body.light-mode .theme-toggle .fa-sun {
     display: inline; /* Show sun icon in light mode */
 }
+
+/* Purple Text */
 .purple-text {
-    color: #720cd1; /* Purple color */
+    color: #720cd1;
 }
+
 /* Canvas Styles */
 #bubble-canvas {
     position: fixed;
