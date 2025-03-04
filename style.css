@@ -211,23 +211,7 @@ body.loaded {
 .justified-text {
     text-align: justify;
 }
-/* Dark/Light Mode Toggle */
-#theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-}
 
-/* Light Mode Styles */
-body.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-}
 
 /* Purple Bubbles Canvas */
 #bubble-canvas {
