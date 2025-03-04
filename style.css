@@ -683,6 +683,14 @@ nav .fas {
     }
 }
 
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('fonts/Ubuntu-Medium.ttf') format('woff2'),
+         url('fonts/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Mobile Responsive Design */
 @media only screen and (max-width: 600px) {
     /* Header Adjustments */
@@ -693,16 +701,20 @@ nav .fas {
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
-    }
-
-    .header-text {
-        margin-top: 50%;
-        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
     }
 
+    .header-text {
+        margin-top: 20%;
+        font-size: 16px;
+    }
+
     .header-text h1 {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     /* Mobile Navigation */
@@ -871,5 +883,4 @@ body.light-mode .theme-toggle .fa-sun {
     height: 100%;
     z-index: -1; /* Place it behind other content */
     background: #080808; /* Match your website's background color */
-}
-}
+}}
