@@ -38,6 +38,9 @@
                 <h1><span></span>Harshith Kumar</span></h1>
                 <p>Tech & Art Enthusiast</p>
             </div>
+            <div class="swipe-down-button" onclick="scrollToNextSection()">
+                <span class="arrow"></span>
+            </div>
         </div>
     </div>
 
@@ -267,7 +270,13 @@
                 body.classList.add('loaded');
             }, 2500);
         });
-
+        
+        function scrollToNextSection() {
+            const nextSection = document.querySelector("#about"); // Change to the ID of your next section
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: "smooth" });
+            }
+        }
         // Tab Switching
         var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
