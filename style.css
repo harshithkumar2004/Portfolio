@@ -937,15 +937,15 @@ nav .fas {
     }
 
     .tab-links {
-        font-size: 25px;
+        font-size: 30px;
         margin-right: 0; /* Remove margin for vertical stacking */
-        margin-bottom: 13px; /* Add spacing between tabs */
+        margin-bottom: 15px; /* Add spacing between tabs */
     }
 
     /* Services Section */
     .services-list {
         grid-template-columns: 1fr; /* Single column for services on mobile */
-        grid-gap: 20px;
+        grid-gap: 22px;
     }
 
     .services-list div {
