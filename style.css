@@ -193,6 +193,56 @@ nav ul li a:hover {
         color: #b6b1b1;
     }
 }
+/* Swipe Down Button Styles */
+.swipe-down-button {
+    position: absolute;
+    bottom: 256px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    border: 2px solid #720cd1;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 2s infinite;
+}
+
+.swipe-down-button .arrow {
+    width: 10px;
+    height: 10px;
+    border: 2px solid #720cd1;
+    border-left: 0;
+    border-top: 0;
+    transform: rotate(45deg);
+    margin-top: -10px;
+    animation: arrowBounce 1.5s infinite;
+}
+
+/* Bounce Animation for Button */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+    }
+    40% {
+        transform: translate(-50%, -20px);
+    }
+    60% {
+        transform: translate(-50%, -10px);
+    }
+}
+
+/* Arrow Bounce Animation */
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: rotate(45deg) translateY(0);
+    }
+    50% {
+        transform: rotate(45deg) translateY(-10px);
+    }
+}
 /* Preloader Styles */
 #preloader {
     position: fixed;
@@ -756,7 +806,7 @@ nav .fas {
 @media only screen and (max-width: 600px) {
     /* Header Adjustments */
     #header {
-        background-image: url(images/ac2.png);
+        background-image: url(images/ac1.png);
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
