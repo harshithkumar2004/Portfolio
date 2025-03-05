@@ -825,9 +825,9 @@ nav .fas {
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: left;
-        text-align: left;
+        justify-content: left;
+        align-items: right;
+        text-align: right;
     }
 
     .header-text {
