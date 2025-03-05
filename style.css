@@ -826,7 +826,7 @@ nav .fas {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: left;
         text-align: left;
     }
 
