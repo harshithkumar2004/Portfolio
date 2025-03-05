@@ -817,17 +817,17 @@ nav .fas {
 @media only screen and (max-width: 600px) {
     /* Header Adjustments */
     #header {
-        background-image: url(images/ac2.png);
+        background-image: url(images/ac1.png);
         background-attachment: fixed;
-        background-position: left;
+        background-position:right;
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: left;
-        align-items: right;
-        text-align: right;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .header-text {
@@ -837,7 +837,7 @@ nav .fas {
     }
 
     .header-text h1 {
-        font-size: 28px;
+        font-size: 24px;
         margin-top: 10px; /* Adjust margin for better spacing */
     }
 
@@ -849,7 +849,7 @@ nav .fas {
         width: 100%;
         background-color: #080808; /* Match your background color */
         z-index: 1000; /* Ensure it stays above other content */
-        padding: 10px 5%; /* Adjust padding for smaller screens */
+        padding: 7px 5%; /* Adjust padding for smaller screens */
         display: flex;
         align-items: center;
         justify-content: space-between;
