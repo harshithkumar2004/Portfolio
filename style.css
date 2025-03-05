@@ -817,7 +817,7 @@ nav .fas {
 @media only screen and (max-width: 600px) {
     /* Header Adjustments */
     #header {
-        background-image: url(images/ac1.png);
+        background-image: url(images/ac2.png);
         background-attachment: fixed;
         background-position: left;
         background-repeat: no-repeat;
@@ -837,7 +837,7 @@ nav .fas {
     }
 
     .header-text h1 {
-        font-size: 24px;
+        font-size: 28px;
         margin-top: 10px; /* Adjust margin for better spacing */
     }
 
