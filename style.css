@@ -840,12 +840,12 @@ nav .fas {
 
     .header-text {
         margin-top: 0; /* Reset margin */
-        font-size: 19px;
+        font-size: 21px;
         padding: 0 20px; /* Add padding for better readability */
     }
 
     .header-text h1 {
-        font-size: 45px; /* Increased font size for h1 */
+        font-size: 49px; /* Increased font size for h1 */
         margin-top: 10px; /* Adjust margin for better spacing */
         color: #fff; /* Ensure the text is visible */
     }
