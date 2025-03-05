@@ -830,7 +830,7 @@ nav .fas {
     .header-image-card {
         width: 150px; /* Adjust the size of the card */
         height: 150px;
-        background-image: url(images/ac2.png);
+        background-image: url(images/ac2.png); /* Ensure the image path is correct */
         background-position: center;
         background-size: cover;
         border-radius: 15px; /* Rounded corners for the card */
@@ -845,14 +845,21 @@ nav .fas {
     }
 
     .header-text h1 {
-        font-size: 24px;
+        font-size: 32px; /* Increased font size for h1 */
         margin-top: 10px; /* Adjust margin for better spacing */
+        color: #fff; /* Ensure the text is visible */
+    }
+
+    .header-text p {
+        font-size: 18px; /* Slightly larger font size for the subtitle */
+        color: #ababab; /* Light gray color for better readability */
     }
 
     /* Swipe Down Button */
     .swipe-down-button {
         margin-top: 20px; /* Space between the text and the button */
     }
+
 
 
     /* Fixed Navigation Bar */
