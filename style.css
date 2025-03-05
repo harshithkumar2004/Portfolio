@@ -830,7 +830,7 @@ nav .fas {
     .header-image-card {
         width: 150px; /* Adjust the size of the card */
         height: 150px;
-        background-image: url(images/ac2.png); /* Ensure the image path is correct */
+        /*background-image: url(images/ac2.png);  Ensure the image path is correct */
         background-position: center;
         background-size: cover;
         border-radius: 15px; /* Rounded corners for the card */
