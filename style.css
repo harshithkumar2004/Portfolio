@@ -853,7 +853,7 @@ nav .fas {
     .swipe-down-button {
         margin-top: 20px; /* Space between the text and the button */
     }
-}
+
 
     /* Fixed Navigation Bar */
     nav {
@@ -1008,4 +1008,4 @@ nav .fas {
         z-index: -1; /* Place it behind other content */
         background: #080808; /* Match your website's background color */
     }
-}
+}}
