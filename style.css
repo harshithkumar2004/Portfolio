@@ -869,7 +869,7 @@ nav .fas {
         top: 0;
         left: 0;
         width: 100%;
-        background-color: #080808; /* Match your background color */
+        background-color: #262626; /* Match your background color */
         z-index: 1000; /* Ensure it stays above other content */
         padding: 7px 5%; /* Adjust padding for smaller screens */
         display: flex;
