@@ -937,9 +937,9 @@ nav .fas {
     }
 
     .tab-links {
-        font-size: 20px;
+        font-size: 25px;
         margin-right: 0; /* Remove margin for vertical stacking */
-        margin-bottom: 12px; /* Add spacing between tabs */
+        margin-bottom: 13px; /* Add spacing between tabs */
     }
 
     /* Services Section */
