@@ -828,15 +828,16 @@ nav .fas {
 
     /* Small Card for Image */
     .header-image-card {
-        width: 150px; /* Adjust the size of the card */
-        height: 150px;
-        /*background-image: url(images/ac2.png);  Ensure the image path is correct */
-        background-position: center;
-        background-size: cover;
-        border-radius: 15px; /* Rounded corners for the card */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-        margin-bottom: 20px; /* Space between the card and the text */
-    }
+    width: 150px; /* Adjust the size of the card */
+    height: 150px;
+    background-color: #262626; /* Dark gray background color */
+    background-image: url(images/ac2.png); /* Ensure the image path is correct */
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px; /* Rounded corners for the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+    margin-bottom: 20px; /* Space between the card and the text */
+}
 
     .header-text {
         margin-top: 0; /* Reset margin */
